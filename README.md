@@ -38,3 +38,7 @@
     - A zero-configuration file server.
 
 #### With hands-on practice and gradual exploration, you'll become proficient with mDNS on ESP devices.
+
+# License
+
+This project is licensed under the GNU License - see the [LICENSE](./LICENSE) file for details.
