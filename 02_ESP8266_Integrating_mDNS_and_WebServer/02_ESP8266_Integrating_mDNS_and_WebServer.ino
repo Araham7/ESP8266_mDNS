@@ -29,7 +29,7 @@ void setup() {
   // Start the mDNS responder with the specified hostname
   if (MDNS.begin(hostname)) {  
     Serial.println("mDNS responder started.");  // If mDNS started successfully
-    Serial.printf("You can access your ESP8266 at http://%s.local\n", hostname);  // Print mDNS URL
+    Serial.printf("You can access your ESP8266 at > http://%s.local\n", hostname);  // Print mDNS URL
   } else {
     Serial.println("Error starting mDNS responder.");  // Print error message if mDNS fails
   }
