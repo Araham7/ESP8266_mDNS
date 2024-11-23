@@ -8,11 +8,13 @@ const char* hostname = "esp8266";       // mDNS hostname for your ESP8266 (used 
 
 ESP8266WebServer server(80);            // Create a web server instance on port 80
 
+void handleRoot();  // Forward declaration of the handleRoot function
+
 void setup() {
   // Start serial communication with 9600 baud rate
   Serial.begin(9600);
   Serial.println("\nStarting ESP8266 mDNS Basic Code...");  // Print start message to serial monitor
-  delay(35);  // Short delay for system stability
+  delay(500);  // Short delay for system stability
 
   // Connect to Wi-Fi network using the provided SSID and password
   WiFi.begin(ssid, password);  
@@ -43,12 +45,12 @@ void setup() {
 void loop() {
   // Continuously handle mDNS queries (this keeps mDNS running)
   MDNS.update();  
+
+  // Handle client requests
+  server.handleClient();
 }
 
 // Function to handle the root path ("/") and send a response to the client
 void handleRoot() {
   server.send(200, "text/plain", "Hello from ESP8266!");  // Send a simple text response to the client
 }
-
-
-
