@@ -54,3 +54,6 @@ void loop() {
 void handleRoot() {
   server.send(200, "text/plain", "Hello from ESP8266!");  // Send a simple text response to the client
 }
+
+
+
